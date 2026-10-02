@@ -51,10 +51,11 @@ dimensions or a correct grid do not guarantee correct character/cell boundaries.
   The assembler cannot identify where the drawn panels actually begin.
 - `--inset` removes the same border from every cell. Use it for measured
   gutters; it cannot repair an irregular grid or clipped character.
-- Match `--background` to the sheet for letterboxing. MP4 is an opaque
-  yuv420p preview. For transparent stickers, request actual alpha from
-  image_gen and inspect GIF's limited transparency; this palette workflow
-  does not promise alpha-quality edges or a transparent MP4.
+- Match `--background` to the sheet for letterboxing. The assembler uses an
+  opaque RGB intermediate, so its GIF and yuv420p MP4 exports are opaque.
+  Transparent stickers require actual alpha from image_gen and an
+  alpha-preserving assembly pipeline, followed by inspection of GIF edges
+  and transparency.
 
 The [bundled examples](../assets/examples/) retain original generated sheets
 and exact prompts. Timing lists are in `manifest.json`. New assembly runs may
