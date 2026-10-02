@@ -26,6 +26,11 @@
 可以做一组保持同一角色外观的贴纸，也可以更换主题、网格和姿势数量。
 新姿势使用内置 `image_gen`，不需要另外配置 API key；现有姿势图的组装可离线完成。
 
+仓库也提供 [Codex 插件清单](.codex-plugin/plugin.json)，把同一个技能打包为
+`anime-reaction-gif` 插件。清单指向现有 `skills/` 目录；无需 MCP 服务或 API key。
+本地组装只依赖 Python 标准库和系统 FFmpeg/ffprobe，没有第三方 Python 包依赖。
+漏洞报告与运行时的数据边界见 [SECURITY.md](SECURITY.md)。
+
 ## 工作方式
 
 1. 按用户的角色和动作生成一张等分的姿势图。保持角色身份、镜头、背景和位置，
